@@ -1,16 +1,10 @@
-const age = 17
+var totalAdd = (x, y) => x + y;
 
-age >=18 ? true : false
-
-console.log(age)
-
-
-
-
-
+console.log(totalAdd(1,3));
 
 // var: When declared, it is considered as global-variable.
 // let: Only accessible inside of the block of code.
 // Ternary (?): 
 // Spread (...):
-// var total = (1==2) ? console.log("True"):console.log("False")
+// var legalAge = age >=18 ? true : false
+// var totalAdd = (x, y) => x + y;
