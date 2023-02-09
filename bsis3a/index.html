@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"><img src="off.gif" id="bulb" /></div>
+    <button type="button" id="up">Up!</button>
+    <!-- <button type="button" id="on">turn on</button>
+    <button type="button" id="off">turn off</button> -->
 
-  <button class="btn" type="button">Button 01</button>
-  <button class="btn" type="button">Button 02</button>
-  <button class="btn" type="button">Button 03</button>
-  <button class="btn" type="button">Button 04</button>
-  <button class="btn" type="button">Button 05</button>
+    <script>
+  
+      var position = 0;
 
-  <script>
+      var bulb = document.getElementsByTagName("img");
 
-    const btn = document.getElementsByClassName("btn");
+      var upBtn = document.getElementsByTagName("button");
 
-    for(var valueBtn of btn) {
-      valueBtn.onclick =function() {
-        valueBtn.innerHTML = "Hello";
+     var down = setInterval(gravity, 10);
+
+      function gravity() {
+        bulb[0].style.position = "absolute";
+        bulb[0].style.top = position + "px";
+        position++;
       }
-    }
-  </script>
-</body>
+
+      let count = 0
+      let mrav;
+      upBtn[0].onclick = function() {
+          count = 0;     
+          clearInterval(down)
+          mrav = setInterval(mGrav,25)
+      
+      }
+
+      function mGrav() {
+        position-= 10
+
+        if(count == 10){
+            clearInterval(mrav);
+          }
+          console.log(count);
+          count++;
+      }
+
+      setInterval(gravity,10)
+
+      
+
+      
+      
+
+      
+     
+
+      // upBtn[0].onclick = function() {
+      //   position-= 10;
+      // }
+    </script>
+  </body>
 </html>

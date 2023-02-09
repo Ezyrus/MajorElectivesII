@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+div.container {
+    margin: 10px;
+}
+
+div.container img {
+    transform: 3s;
+}

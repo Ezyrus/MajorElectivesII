@@ -1,4 +1,5 @@
 
+
 // var btns = document.getElementsByClassName("btn");
 
 //       for (var btn of btns) {
@@ -14,3 +15,4 @@
 // Arrow Function (=>):
 // var legalAge = age >=18 ? true : false (shorthand if statement)
 // var totalAdd = (x, y) => x + y;                (shorthand function)
+
