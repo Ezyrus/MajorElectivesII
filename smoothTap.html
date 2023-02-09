@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smooth Tap</title>
+  </head>
+  <body>
+
+    <div class="container"><img src="/assets/off.gif" id="bulb" /></div>
+    <button type="button" id="up">Up!</button>
+
+    <script>
+  
+      var position = 0;
+
+      var bulb = document.getElementsByTagName("img");
+      var upBtn = document.getElementsByTagName("button");
+
+      // Call and Start the function that adds position with 10milliseconds delay.
+     var down = setInterval(gravity, 10); 
+
+     //Every time the function is triggered the following will happen:
+      function gravity() {
+        bulb[0].style.position = "absolute"; //Add absolute position.
+        bulb[0].style.top = position + "px"; //Add 0 pixel.
+
+        position++;  //Add 1 pixel every 10 milliseconds.
+      }
+
+      var count = 0 // Initialize count to 0 as a starting point.
+      var mrav; // Declare for now to be initialized later.
+
+      upBtn[0].onclick = function() {
+          count = 0;     //Every time we click count resets to 0.
+          clearInterval(down) //Stop the function to stop the adding of position.
+
+          //Initialize and start the function to minus the position of our image with 25milliseconds delay
+          mrav = setInterval(mGrav, 25) 
+      }
+
+      //Every time the function is triggered the following will happen:
+      function mGrav() {
+        position-= 10 //The position of our image will minus it's top position with -10pixels.
+
+        //If count is equals to 10 it will stop substracing the image position. 
+        if(count == 10){
+            clearInterval(mrav);
+          }
+          count++;
+      }
+
+      setInterval(gravity,10) //Start the function again to add the position.
+    </script>
+
+  </body>
+</html>
