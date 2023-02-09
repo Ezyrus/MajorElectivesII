@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="index.js"></script> -->
+    <link rel="stylesheet" href="index.css" />
+    <title>Js | Major Elective 2</title>
+  </head>
+
+  <body>
+    <div
+      for="group"
+      style="text-align: center; font-size: 150px; font-family: cursive"
+    >
+      <!-- ROW 01 -->
+      <div for="parent" class="parent">
+        <div class="child">
+          <label class="mark" id="1"></label>
+        </div>
+
+        <div class="child">
+          <label class="mark" id="2"></label>
+        </div>
+
+        <div class="child">
+          <label class="mark" id="3"></label>
+        </div>
+      </div>
+
+      <!-- ROW 02 -->
+      <div for="parent" class="parent">
+        <div class="child">
+          <label class="mark" id="4"></label>
+        </div>
+        <div class="child">
+          <label class="mark" id="5"></label>
+        </div>
+        <div class="child">
+          <label class="mark" id="6"></label>
+        </div>
+      </div>
+
+      <!-- ROW 03 -->
+      <div for="parent" class="parent">
+        <div class="child">
+          <label class="mark" id="7"></label>
+        </div>
+        <div class="child">
+          <label class="mark" id="8"></label>
+        </div>
+        <div class="child">
+          <label class="mark" id="9"></label>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var marks = document.getElementsByClassName("mark");
+      var markContainer = document.getElementsByClassName("child");
+      var currentMove = "X";
+
+      for(const markCon of markContainer) {
+    
+        markCon.onclick = function() {
+          markCon.innerHTML = currentMove;
+    
+          if (currentMove == "X") {
+              currentMove = "O"
+              
+          } else if (currentMove == "O") {
+            currentMove = "X"
+          }
+        }
+      }
+      // markCon[0].innerHTML = currentMove;
+      // markCon[1].innerHTML = currentMove;
+      // markCon[2].innerHTML = currentMove;
+      // markCon[3].innerHTML = currentMove;
+      // markCon[4].innerHTML = currentMove;
+      // markCon[5].innerHTML = currentMove;
+      // markCon[6].innerHTML = currentMove;
+      // markCon[7].innerHTML = currentMove;
+      // markCon[8].innerHTML = currentMove;
+
+    
+      // for(var mark_container of markContainer){
+      //   mark_container.onclick = function() {
+      //   mark_container.innerHTML = currentMove;
+
+      //   }
+      // }
+    </script>
+  </body>
+</html>
