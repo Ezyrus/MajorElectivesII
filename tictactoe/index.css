@@ -1,12 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+div.mainContainer {
+  text-align: center; 
+  font-size: 150px;
+   font-family: cursive;
+   margin: 3%;
+}
+
 .parent {
     display: flex;
-    width: 50%;
+    width: 100%;
   }
 
   .child {
     width: 100%;
+    margin: 1%;
     height: 200px;
-    border: 3px solid #ccc;
+    border: 3px solid black;
   }
 
   .child:hover {
