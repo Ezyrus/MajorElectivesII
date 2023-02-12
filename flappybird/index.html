@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Floppy Bird</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="title">Flappy Bird</h1>
+
+      <div class="bird-container" id="bird">
+        <img id="bird-image" alt="bird" />
+      </div>
+    </div>
+
+    <script>
+      const bird = document.getElementById("bird");
+      const birdImg = document.getElementById("bird-image");
+ 
+      var birdState = 10;
+      var initDown = setInterval(birdDown, 01);
+
+      function birdDown() {
+        bird.style.position = "absolute";
+        birdImg.src = "birdup.png";
+        bird.style.transform = "rotate(10deg)";
+        bird.style.top = birdState + "px";
+        birdState++;
+        checkLose();
+      }
+
+      var stopUpMovement;
+      var triggerUp;
+      document.addEventListener("keydown", function (event) {
+        if (event.code === "Space") {
+            stopUpMovement = 0;
+            clearInterval(initDown);
+            triggerUp = setInterval(birdUp, 10);
+        }
+      });
+
+      function birdUp() {
+        birdState-=10;
+        birdImg.src = "birddown.png";
+        bird.style.transform = "rotate(-1deg)";
+
+        checkLose();
+        if(stopUpMovement == 20) {
+            clearInterval(triggerUp);
+        }
+        stopUpMovement++;
+      }
+
+      setInterval(birdDown, 01);
+      function checkLose() {
+        if(birdState == 880 || birdState == 0) {
+            alert("You Lose!");
+            location.reload();
+        }
+      }
+
+    </script>
+  </body>
+</html>
