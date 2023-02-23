@@ -20,9 +20,9 @@
       const bird = document.getElementById("bird");
       const birdImg = document.getElementById("bird-image");
  
-      var birdState = 10;
+      var birdState = 250;
       var initDown = setInterval(birdDown, 01);
-
+     
       function birdDown() {
         bird.style.position = "absolute";
         birdImg.src = "birdup.png";
@@ -38,7 +38,7 @@
         if (event.code === "Space") {
             stopUpMovement = 0;
             clearInterval(initDown);
-            triggerUp = setInterval(birdUp, 10);
+            triggerUp = setInterval(birdUp, 10);    
         }
       });
 
@@ -57,10 +57,10 @@
       setInterval(birdDown, 01);
       function checkLose() {
         if(birdState == 880 || birdState == 0) {
-            alert("You Lose!");
+            alert("You Lose | Press Space to fly!");
             location.reload();
         }
-      }
+      }...
 
     </script>
   </body>
